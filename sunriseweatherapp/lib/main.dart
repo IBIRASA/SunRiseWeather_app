@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import '../screens/location_search.dart';
+import '../screens/weather.dart';
 import '../screens/splash_screen.dart';
 import '../screens/welcome_screen.dart';
-import '../screens/signin.dart';
-import '../screens/signup.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SunRise app',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
-        '/welcome': (context) => WelcomeScreen(),
-        '/signup': (context) => SignUpScreen(),
-        '/signin': (context) => SignInScreen(),
+        '/': (context) => const SplashScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+        '/weather': (context) => const WeatherApp(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
